@@ -1,16 +1,26 @@
+# inspired by: https://android.googlesource.com/device/google/marlin/+/nougat-dr1-release/recovery.fstab
+
+#device         mount point      fstype        [device2] [length=]
+/dev/block/bootdevice/by-name/system    /system        ext4    ro,barrier=1                                                 wait
+/dev/block/bootdevice/by-name/cache     /cache         ext4    noatime,nosuid,nodev,barrier=1,data=ordered                  wait,check
+/dev/block/bootdevice/by-name/userdata  /data          ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc  wait,check,encryptable=/dev/block/bootdevice/by-name/extra
+/dev/block/mmcblk1p1                    /external_sd   vfat    nosuid,nodev                                                 wait
+/dev/block/bootdevice/by-name/boot      /boot          emmc    defaults                                                     defaults
+/dev/block/bootdevice/by-name/recovery  /recovery      emmc    defaults                                                     defaults
+
 # mount point   fstype  device					device2			flags
-/system		ext4	/dev/block/bootdevice/by-name/system
-/system_image	emmc	/dev/block/bootdevice/by-name/system
-/cache		ext4	/dev/block/bootdevice/by-name/cache
-/data		ext4	/dev/block/bootdevice/by-name/userdata				flags=encryptable=/dev/block/bootdevice/by-name/extra
-/boot		emmc	/dev/block/bootdevice/by-name/boot
-/recovery 	emmc	/dev/block/bootdevice/by-name/recovery				flags=backup=1
-/misc 		emmc	/dev/block/bootdevice/by-name/misc
-/devlog 	ext4	/dev/block/bootdevice/by-name/devlog
-/carrier 	ext4	/dev/block/bootdevice/by-name/carrier
-/cota		ext4	/dev/block/bootdevice/by-name/cota
-/preload	ext4	/dev/block/bootdevice/by-name/apppreload
+#/system         ext4    /dev/block/bootdevice/by-name/system    
+#/system_image   emmc    /dev/block/bootdevice/by-name/system
+#/cache          ext4    /dev/block/bootdevice/by-name/cache
+#/data           ext4    /dev/block/bootdevice/by-name/userdata				flags=encryptable=/dev/block/bootdevice/by-name/extra
+#/boot           emmc    /dev/block/bootdevice/by-name/boot
+#/recovery       emmc    /dev/block/bootdevice/by-name/recovery				flags=backup=1
+#/misc           emmc    /dev/block/bootdevice/by-name/misc
+#/devlog         ext4    /dev/block/bootdevice/by-name/devlog
+#/carrier        ext4    /dev/block/bootdevice/by-name/carrier
+#/cota           ext4    /dev/block/bootdevice/by-name/cota
+#/preload        ext4    /dev/block/bootdevice/by-name/apppreload
 
 # Removable storage
-/external_sd	vfat	/dev/block/mmcblk1p1			/dev/block/mmcblk1	flags=display="Micro SDcard";storage;wipeingui;removable;encryptable=footer
+#/external_sd    vfat    /dev/block/mmcblk1p1			/dev/block/mmcblk1	flags=display="Micro SDcard";storage;wipeingui;removable;encryptable=footer
 #/usb_otg	vfat	/dev/block/sda1				/dev/block/sda		flags=display="USB-OTG";storage;wipeingui;removable
