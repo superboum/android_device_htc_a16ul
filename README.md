@@ -3,6 +3,13 @@
 Trying to port the HTC Desire 530 to Lineage OS.
 Nothing has been tested for now, use this repository with EXTREME care.
 
+Configure JACK:
+
+```
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+```
+
+
 ## flex is too old
 
 ```
@@ -36,4 +43,12 @@ Cyanogen/LineageOS require many threads to compile, check that you have set `-j 
 
 ```
 make -j4
+```
+
+## JAVA\_HOME
+
+JAVA\_HOME is not set correctly...
+
+```
+export JAVA_HOME=/usr/lib/jvm/java/
 ```
