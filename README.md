@@ -52,3 +52,14 @@ JAVA\_HOME is not set correctly...
 ```
 export JAVA_HOME=/usr/lib/jvm/java/
 ```
+
+## make: \*\*\* No rule to make target
+
+```
+mkdir -p out/target/product/a16ul/obj/KERNEL_OBJ/usr
+```
+
+FIXME: should be fixed in a more elegant way.
+Info :
+  - https://bbs.archlinux.org/viewtopic.php?id=147928
+  - https://blog.csdn.net/ztguang/article/details/52875059
