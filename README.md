@@ -64,3 +64,27 @@ Info :
   - https://bbs.archlinux.org/viewtopic.php?id=147928
   - https://blog.csdn.net/ztguang/article/details/52875059
   - https://forum.xda-developers.com/android/help/problem-compiling-generic-cyanogenmod-t3318017
+
+## Fix curl `--no-proxy` error
+
+```
+curl: option --no-proxy: used '--no-' for option that isn't a boolean
+curl: try 'curl --help' or 'curl --manual' for more information
+```
+
+To fix, please do:
+
+```
+croot
+cd ./prebuilts/sdk/tools
+git apply ../../../device/htc/a16ul/fix_curl.patch
+croot
+make jack
+```
+
+If everything went well, you should find `--noproxy` instead of `--no-proxy` in this file:
+
+```
+./out/host/linux-x86/bin/jack
+./out/host/linux-x86/bin/jack-admin
+```
