@@ -15,7 +15,8 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/recovery/init.recovery.htc_a16.rc:recovery/root/init.recovery.htc_a16.rc
 
 $(call inherit-product, build/target/product/full.mk)
 
