@@ -16,3 +16,10 @@ LC_ALL=C make
 ```
 
 https://github.com/sonyxperiadev/bug_tracker/issues/136
+
+
+## python2 is required by tools and Fedora 32 uses python3 by default
+
+```
+sudo ln -s /usr/bin/python2 /usr/local/bin/python3
+```
