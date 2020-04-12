@@ -63,3 +63,4 @@ FIXME: should be fixed in a more elegant way.
 Info :
   - https://bbs.archlinux.org/viewtopic.php?id=147928
   - https://blog.csdn.net/ztguang/article/details/52875059
+  - https://forum.xda-developers.com/android/help/problem-compiling-generic-cyanogenmod-t3318017
