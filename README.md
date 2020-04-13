@@ -13,6 +13,7 @@ add_lunch_combo cm_a16ul-eng
 lunch
 LC_ALL=C make -j8 otatools
 LC_ALL=C make -j8 all
+LC_ALL=C make -j8 bacon
 ```
 
 ## Stuff
