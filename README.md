@@ -1,12 +1,35 @@
 # HTC DESIRE 530
 
+
+## STEPS
+
+```
+source build/envsetup.sh
+make clean
+mkdir -p out/target/product/a16ul/obj/KERNEL_OBJ/usr
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+add_lunch_combo cm_a16ul-eng
+lunch
+make all
+```
+
+## Stuff
+
 Trying to port the HTC Desire 530 to Lineage OS.
 Nothing has been tested for now, use this repository with EXTREME care.
+
 
 Configure JACK:
 
 ```
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
+```
+
+add combo to lunch:
+
+```
+add_lunch_combo cm_a16ul-eng
+lunch
 ```
 
 
