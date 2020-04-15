@@ -9,11 +9,12 @@ make clean
 mkdir -p out/target/product/a16ul/obj/KERNEL_OBJ/usr
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 export JAVA_HOME=/usr/lib/jvm/java/
+export USE_CCACHE=1
+export CCACHE_COMPRESS=1
+ccache -M 50G
 add_lunch_combo cm_a16ul-eng
 lunch
-LC_ALL=C make -j8 otatools
-LC_ALL=C make -j8 all
-LC_ALL=C make -j8 bacon
+LC_ALL=C make -j8 otatools droid bacon
 ```
 
 ## Stuff
